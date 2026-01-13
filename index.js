@@ -8,6 +8,9 @@ const app = express();
 // 3. 設定中間件 (Middleware)
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // 4. 設定路由 (Routes)
 app.post('/spin', (req, res) => {
@@ -44,4 +47,5 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`🚀 伺服器啟動成功！`);
     console.log(`🔗 請打開瀏覽器輸入：http://localhost:${PORT}`);
+
 });
