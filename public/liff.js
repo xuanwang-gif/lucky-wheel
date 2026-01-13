@@ -56,12 +56,13 @@ try {
   // 只有在 LINE App 內開啟時才傳送訊息
        if (liff.isInClient()) {
          await liff.sendMessages([
-           { type: 'text', text: `紅包金額：${label}` }
+           { type: 'text', text: `幸運轉盤 紅包金額：${label}` }
          ]);
 
        }
        spinBtn.disabled = false;
      }, 3200);
    });
+
 
    initLiff();
